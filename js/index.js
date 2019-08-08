@@ -49,22 +49,48 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 let ctaImg = document.querySelector("#cta-img");
 ctaImg.src = 'img/header-img.png';
 
-
-
-
-
 // ## Task 2: Update the HTML with the JSON data
 // * [ ] Remember, NO direct updating of the HTML source is allowed.
 // * [ ] Using your selectors, update the content to match the example file.
 // * [ ] Remember to update the src attributes on images
 //
-// let nav = document.querySelectorAll("a");
-// nav.setAttribute('src', siteContent["nav"])
-//
+let appendChild = document.createElement('a')
+let prependChild = document.createElement('a')
+
+var aS = document.querySelector('nav');
+aS.appendChild(appendChild);
+aS.prepend(prependChild);
+let navItems = document.querySelectorAll('a');
+navItems.forEach((aTags, i) => {
+aTags.textContent = siteContent.nav['nav-item-'+ i]
+});
+
 document.querySelector('h1').textContent = siteContent["cta"]["h1"];
 document.querySelector('button').textContent = siteContent["cta"]["button"];
 
+let h4s= document.querySelectorAll('h4')
+h4s[0].textContent = siteContent['main-content']["features-h4"];
+h4s[1].textContent = siteContent['main-content']["about-h4"];
+h4s[2].textContent = siteContent['main-content']["services-h4"];
+h4s[3].textContent = siteContent['main-content']["product-h4"];
+h4s[4].textContent = siteContent['main-content']["vision-h4"];
+h4s[5].textContent = siteContent['contact']["contact-h4"];
 
-document.querySelector(".main-content div.top-content h4").textContent = siteContent['main-content']["features-h4"];
-document.querySelector(".main-content div.top-content p").textContent = siteContent['main-content']["features-content"];
-document.querySelector(".main-content div.top-content p").textContent = siteContent['main-content']["features-content"];
+//
+document.getElementById('middle-img').src = "img/mid-page-accent.jpg"
+//
+let pS = document.querySelectorAll('p')
+pS[0].textContent = siteContent['main-content']["features-content"];
+pS[1].textContent = siteContent['main-content']["about-content"];
+pS[2].textContent = siteContent['main-content']["services-content"];
+pS[3].textContent = siteContent['main-content']["product-content"];
+pS[4].textContent = siteContent['main-content']["vision-content"];
+pS[5].textContent = siteContent['contact']["address"];
+pS[6].textContent = siteContent['contact']["phone"];
+pS[7].textContent = siteContent['contact']["email"];
+pS[8].textContent = siteContent['footer']["copyright"];
+
+
+
+
+//
