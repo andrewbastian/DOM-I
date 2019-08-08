@@ -36,7 +36,17 @@ const siteContent = {
     "copyright" : "Copyright Great Idea! 2018"
   },
 };
+//
+var log = document.querySelector('body');
 
+window.addEventListener('load', (event) => {
+    log.animate({
+    backgroundColor: ['black','white'],
+    opacity: [ 0, 0.9, 1 ],
+    offset: [ 0, 0.8 ], // Shorthand for [ 0, 0.8, 1 ]
+    easing: [ 'ease-in', 'ease-out' ],
+  }, 2000);
+});
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
@@ -49,6 +59,14 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 let ctaImg = document.querySelector("#cta-img");
 ctaImg.src = 'img/header-img.png';
 
+window.addEventListener('load', (event)=>{
+  ctaImg.animate({
+    transformOrigin: ["80%", "40%"],
+    offset: [ 0, 0.8 ], // Shorthand for [ 0, 0.8, 1 ]
+    easing: [ 'ease-in', 'ease-out' ],
+  }, 8000);
+})
+
 // ## Task 2: Update the HTML with the JSON data
 // * [ ] Remember, NO direct updating of the HTML source is allowed.
 // * [ ] Using your selectors, update the content to match the example file.
@@ -60,10 +78,36 @@ let prependChild = document.createElement('a')
 var aS = document.querySelector('nav');
 aS.appendChild(appendChild);
 aS.prepend(prependChild);
+
 let navItems = document.querySelectorAll('a');
 navItems.forEach((aTags, i) => {
 aTags.textContent = siteContent.nav['nav-item-'+ i]
+aTags.style.color = 'B9D9B4';
+aTags.addEventListener("mouseenter", (event)=>{
+  aTags.style.fontSize = "30px";
+  aTags.style.textDecoration ="none";
+  aTags.animate({
+  opacity: [ 0, 0.9, 1 ],
+  offset: [ 0, 0.8 ], // Shorthand for [ 0, 0.8, 1 ]
+  easing: [ 'ease-in', 'ease-out' ],
+}, 2000);
+})
+aTags.addEventListener("mouseleave", (event)=>{
+  aTags.style.fontSize = "20px";
+  aTags.style.textDecoration ="none";
+  aTags.animate({
+  opacity: [ 0, 0.9, 1 ],
+  offset: [ 0, 0.8 ], // Shorthand for [ 0, 0.8, 1 ]
+  easing: [ 'ease-in', 'ease-out' ],
+}, 2000);
+})
 });
+// var myNav = document.getElementById("myNav");
+// navBtn.addEventListener("click", (event) => {
+//   myNav.style.height = "10%";
+// })
+
+
 
 document.querySelector('h1').textContent = siteContent["cta"]["h1"];
 document.querySelector('button').textContent = siteContent["cta"]["button"];
@@ -91,6 +135,9 @@ pS[7].textContent = siteContent['contact']["email"];
 pS[8].textContent = siteContent['footer']["copyright"];
 
 
-
-
+// ## Task 3: Add new content
+// * [ ] Change the color of the navigation text to be green.
+// * [ ] Utilize `.appendChild()` and `.prepend()` to add two new items to the navigation system. You can call them whatever you want.
+// * [ ] Check your work by looking at the [original html](original.html) in the browser
+//
 //
