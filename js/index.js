@@ -48,3 +48,23 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 //
 let ctaImg = document.querySelector("#cta-img");
 ctaImg.src = 'img/header-img.png';
+
+
+
+
+
+// ## Task 2: Update the HTML with the JSON data
+// * [ ] Remember, NO direct updating of the HTML source is allowed.
+// * [ ] Using your selectors, update the content to match the example file.
+// * [ ] Remember to update the src attributes on images
+//
+// let nav = document.querySelectorAll("a");
+// nav.setAttribute('src', siteContent["nav"])
+//
+document.querySelector('h1').textContent = siteContent["cta"]["h1"];
+document.querySelector('button').textContent = siteContent["cta"]["button"];
+
+
+document.querySelector(".main-content div.top-content h4").textContent = siteContent['main-content']["features-h4"];
+document.querySelector(".main-content div.top-content p").textContent = siteContent['main-content']["features-content"];
+document.querySelector(".main-content div.top-content p").textContent = siteContent['main-content']["features-content"];
