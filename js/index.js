@@ -36,7 +36,108 @@ const siteContent = {
     "copyright" : "Copyright Great Idea! 2018"
   },
 };
+//
+var log = document.querySelector('body');
 
+window.addEventListener('load', (event) => {
+    log.animate({
+    backgroundColor: ['black','white'],
+    opacity: [ 0, 0.9, 1 ],
+    offset: [ 0, 0.8 ], // Shorthand for [ 0, 0.8, 1 ]
+    easing: [ 'ease-in', 'ease-out' ],
+  }, 2000);
+});
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+
+//## Task 1: Create selectors to point your data into elements
+// * [ ] Create selectors by using any of the DOM element's methods
+// * [ ] Note that IDs have been used on all images.  Use the IDs to update src path content
+//
+let ctaImg = document.querySelector("#cta-img");
+ctaImg.src = 'img/header-img.png';
+
+window.addEventListener('load', (event)=>{
+  ctaImg.animate({
+    transformOrigin: ["80%", "40%"],
+    offset: [ 0, 0.8 ], // Shorthand for [ 0, 0.8, 1 ]
+    easing: [ 'ease-in', 'ease-out' ],
+  }, 8000);
+})
+
+// ## Task 2: Update the HTML with the JSON data
+// * [ ] Remember, NO direct updating of the HTML source is allowed.
+// * [ ] Using your selectors, update the content to match the example file.
+// * [ ] Remember to update the src attributes on images
+//
+let appendChild = document.createElement('a')
+let prependChild = document.createElement('a')
+
+var aS = document.querySelector('nav');
+aS.appendChild(appendChild);
+aS.prepend(prependChild);
+
+let navItems = document.querySelectorAll('a');
+navItems.forEach((aTags, i) => {
+aTags.textContent = siteContent.nav['nav-item-'+ i]
+aTags.style.color = 'B9D9B4';
+aTags.addEventListener("mouseenter", (event)=>{
+  aTags.style.fontSize = "30px";
+  aTags.style.textDecoration ="none";
+  aTags.animate({
+  opacity: [ 0, 0.9, 1 ],
+  offset: [ 0, 0.8 ], // Shorthand for [ 0, 0.8, 1 ]
+  easing: [ 'ease-in', 'ease-out' ],
+}, 2000);
+})
+aTags.addEventListener("mouseleave", (event)=>{
+  aTags.style.fontSize = "20px";
+  aTags.style.textDecoration ="none";
+  aTags.animate({
+  opacity: [ 0, 0.9, 1 ],
+  offset: [ 0, 0.8 ], // Shorthand for [ 0, 0.8, 1 ]
+  easing: [ 'ease-in', 'ease-out' ],
+}, 2000);
+})
+});
+// var myNav = document.getElementById("myNav");
+// navBtn.addEventListener("click", (event) => {
+//   myNav.style.height = "10%";
+// })
+
+
+
+document.querySelector('h1').textContent = siteContent["cta"]["h1"];
+document.querySelector('button').textContent = siteContent["cta"]["button"];
+
+let h4s= document.querySelectorAll('h4')
+h4s[0].textContent = siteContent['main-content']["features-h4"];
+h4s[1].textContent = siteContent['main-content']["about-h4"];
+h4s[2].textContent = siteContent['main-content']["services-h4"];
+h4s[3].textContent = siteContent['main-content']["product-h4"];
+h4s[4].textContent = siteContent['main-content']["vision-h4"];
+h4s[5].textContent = siteContent['contact']["contact-h4"];
+
+//
+document.getElementById('middle-img').src = "img/mid-page-accent.jpg"
+//
+let pS = document.querySelectorAll('p')
+pS[0].textContent = siteContent['main-content']["features-content"];
+pS[1].textContent = siteContent['main-content']["about-content"];
+pS[2].textContent = siteContent['main-content']["services-content"];
+pS[3].textContent = siteContent['main-content']["product-content"];
+pS[4].textContent = siteContent['main-content']["vision-content"];
+pS[5].textContent = siteContent['contact']["address"];
+pS[6].textContent = siteContent['contact']["phone"];
+pS[7].textContent = siteContent['contact']["email"];
+pS[8].textContent = siteContent['footer']["copyright"];
+
+
+// ## Task 3: Add new content
+// * [ ] Change the color of the navigation text to be green.
+// * [ ] Utilize `.appendChild()` and `.prepend()` to add two new items to the navigation system. You can call them whatever you want.
+// * [ ] Check your work by looking at the [original html](original.html) in the browser
+//
+//
